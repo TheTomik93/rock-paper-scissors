@@ -4,3 +4,10 @@ h1 {
 body {
     background-color: cornsilk;
 }
+p{
+    background-color: red;
+}
+.battleLog {
+    border: 2px solid black;
+    margin-top: 15px;
+}
