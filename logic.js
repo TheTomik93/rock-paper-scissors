@@ -3,6 +3,7 @@ let computerPlayed;
 let playerScore = 0;
 let computerScore = 0;
 let gameOver = false;
+let roundCount = 0;
 
 const choices = ["Rock", "Paper", "Scissors"];
 
@@ -14,8 +15,14 @@ document.getElementById("newGame").addEventListener("click", newGame);
 function newGame(){
     playerScore = 0;
     computerScore = 0;
+    roundCount = 0;
     gameOver = false;
     document.getElementById('score').innerHTML = `To play the game simply click Rock, Paper, or Scissors! Player score: ${playerScore} ... Computer score: ${computerScore}`;
+    
+    const myNode = document.getElementById("battleLog");
+    while (myNode.firstChild) {
+        myNode.removeChild(myNode.lastChild);
+    }    
 }
 
 function game(){
@@ -28,6 +35,7 @@ function game(){
             (playerPlayed === "Scissors" && computerPlayed === "Paper")
             ) {
             playerScore++;
+            battleLogAddItem("WIN");
             updateScore();
         }
         else if (
@@ -36,9 +44,11 @@ function game(){
             (playerPlayed === "Scissors" && computerPlayed === "Rock")
             ) {
             computerScore++;
+            battleLogAddItem("LOSS");
             updateScore();
         }
         else {
+            battleLogAddItem("TIE");
             updateScore();
         }
     }
@@ -72,3 +82,11 @@ function updateScore(){
 console.log(nodes);
 console.log(`ID ${nodes[0].id}`);
 console.log(nodes[0].classList[0]);
+
+function battleLogAddItem(result){
+    let battleLogItem = document.createElement("p");
+    roundCount++;
+    let battleLogItemText = document.createTextNode(`(Round ${roundCount}) ${result}!!! Player played ${playerPlayed}, computer played ${computerPlayed}`);
+    battleLogItem.appendChild(battleLogItemText);
+    document.getElementById("battleLog").appendChild(battleLogItem);
+}
