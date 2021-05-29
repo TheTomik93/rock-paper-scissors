@@ -4,10 +4,21 @@ h1 {
 body {
     background-color: cornsilk;
 }
-p{
-    background-color: red;
+.battleLog p{
+    margin: 3px;
+    margin-left: 12px;
+    color: rgba(93, 213, 63, 0.918);
+}
+.battleLog p:first-child{
+    margin-top: 12px;
+}
+.battleLog p:last-child{
+    margin-bottom: 12px;
+}
+.battleLog{
+    background-color: black;
 }
 .battleLog {
-    border: 2px solid black;
+    border: 2px solid yellow;
     margin-top: 15px;
 }

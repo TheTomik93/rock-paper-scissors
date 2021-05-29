@@ -78,10 +78,7 @@ function updateScore(){
         document.getElementById('score').innerHTML = `GAME OVER! Player: ${playerScore} - Computer: ${computerScore} ... press New Game to play again`;
         gameOver = true;
     }
-}let nodes = document.querySelectorAll('#Rock, #Paper, #Scissors');
-console.log(nodes);
-console.log(`ID ${nodes[0].id}`);
-console.log(nodes[0].classList[0]);
+}
 
 function battleLogAddItem(result){
     let battleLogItem = document.createElement("p");
