@@ -1,13 +1,20 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 h1 {
-    background-color:cadetblue;
+    background-color: black;
+    color:rgba(93, 213, 63, 0.918);
 }
 body {
-    background-color: cornsilk;
+    background-color: black;
 }
 .battleLog p{
     margin: 3px;
-    margin-left: 12px;
+    margin-left: 15px;
     color: rgba(93, 213, 63, 0.918);
+    font-size: 14px;
 }
 .battleLog p:first-child{
     margin-top: 12px;
@@ -15,10 +22,16 @@ body {
 .battleLog p:last-child{
     margin-bottom: 12px;
 }
-.battleLog{
-    background-color: black;
-}
+
 .battleLog {
     border: 2px solid yellow;
     margin-top: 15px;
+}
+button{
+    background-color: black;
+    color:rgba(93, 213, 63, 0.918);
+    font-size: 22px;;
+}
+#score {
+    color:yellow;
 }
